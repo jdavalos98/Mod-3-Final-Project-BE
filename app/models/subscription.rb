@@ -1,6 +1,10 @@
 class Subscription < ApplicationRecord
-  belongs_to :customer
-  belongs_to :tea
+  has_many :subscription_teas
+  has_many :teas, through: :subscription_teas
+  has_many :subscription_customers
+  has_many :customers, through: :subscription_customers
 
-  validates :price, :status, presence: true
+  validates :title, :description, presence: true
+  validates :price, presence: true, numericality: true
+  validates :customers_subscribed, presence: true numericality: {only_integer: true}
 end

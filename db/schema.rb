@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_11_230431) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_11_231906) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,12 +47,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_11_230431) do
     t.decimal "price"
     t.string "status"
     t.string "frequency"
-    t.bigint "customer_id", null: false
-    t.bigint "tea_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["customer_id"], name: "index_subscriptions_on_customer_id"
-    t.index ["tea_id"], name: "index_subscriptions_on_tea_id"
+    t.integer "customers_subscribed"
   end
 
   create_table "teas", force: :cascade do |t|
@@ -68,6 +65,4 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_11_230431) do
   add_foreign_key "subscription_customers", "subscriptions"
   add_foreign_key "subscription_teas", "subscriptions"
   add_foreign_key "subscription_teas", "teas"
-  add_foreign_key "subscriptions", "customers"
-  add_foreign_key "subscriptions", "teas"
 end
