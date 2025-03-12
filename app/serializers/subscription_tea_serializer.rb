@@ -1,5 +1,5 @@
 class SubscriptionTeaSerializer
   include JSONAPI::Serializer
-  belongs_to :subscription
-  belongs_to :tea
+  attributes :subscription_id, :tea_id
+
 end
