@@ -8,9 +8,11 @@ class Subscription < ApplicationRecord
   validates :price, presence: true, numericality: true
   validates :customers_subscribed, presence: true, numericality: {only_integer: true}
 
-  after_initialize :set_default_user_subscribed, if: :new_record?
+  after_initialize :set_default_customers_subscribed, if: :new_record?
 
-  def set_default_user_subscribed
-    self.user_subscribed ||= 0
+  private
+
+  def set_default_customers_subscribed
+    self.customers_subscribed ||= 0
   end
 end
