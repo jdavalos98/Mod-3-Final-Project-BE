@@ -1,5 +1,10 @@
 class Tea < ApplicationRecord
-  has_many :subscriptions
+  has_many :subscription_teas
+  has_many :subscriptions, through: :subscription_teas
 
-  validates :title, :temperature, presence: true
+
+
+  validates :title, :description, presence: true
+  validates :temperature, presence: true, numericality: { only_integer: true}
+  validates :brew_time, presence: true, numericality: { only_integer: true}
 end
