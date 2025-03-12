@@ -1,5 +1,5 @@
 class TeaSerializer
-  include JSONAPI::TeaSerializer
+  include JSONAPI::Serializer
 
   attributes :title, :description, :temperature, :brew_time
 end
