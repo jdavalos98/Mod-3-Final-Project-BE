@@ -15,4 +15,10 @@ class SubscriptionSerializer
         }
       end
   end
+  
+  attribute :teas do |object, params|
+    if params[:include_teas]
+      object.teas
+    end
+  end
 end

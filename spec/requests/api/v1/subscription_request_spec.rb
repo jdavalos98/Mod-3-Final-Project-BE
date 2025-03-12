@@ -24,6 +24,9 @@ RSpec.describe "Subscription Controller", type: :request do
       expect(json[:data].first[:attributes]).to include(:frequency)
       expect(json[:data].first[:attributes]).to include(:customers_subscribed)
     end
+  end
 
+  describe 'Show Action' do
+    it 'returns one subscription with'
   end
 end
