@@ -4,7 +4,7 @@ class Subscription < ApplicationRecord
   has_many :subscription_customers
   has_many :customers, through: :subscription_customers
 
-  validates :title, :description, presence: true
+  validates :title, :frequency, presence: true
   validates :price, presence: true, numericality: true
-  validates :customers_subscribed, presence: true numericality: {only_integer: true}
+  validates :customers_subscribed, presence: true, numericality: {only_integer: true}
 end
