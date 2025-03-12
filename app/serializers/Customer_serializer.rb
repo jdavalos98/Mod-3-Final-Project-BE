@@ -3,12 +3,12 @@ class CustomerSerializer
 
   attributes :first_name, :last_name, :email, :address
 
-  attributes :subscriptions do |customer|
+  attribute :subscriptions do |customer|
     customer.subscription_customers
       .includes(:subscription)
       .where(subscription_customers: {status: true})
-      .map do |subscriptions_customer|
-        subscription = subscription_customers.subscription
+      .map do |subscription_customer|  
+        subscription = subscription_customer.subscription  
         {
           id: subscription.id,
           title: subscription.title

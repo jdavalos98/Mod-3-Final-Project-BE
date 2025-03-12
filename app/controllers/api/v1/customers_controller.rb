@@ -1,5 +1,5 @@
-class Api::V1::CustomerController < ApplicationController
+class Api::V1::CustomersController < ApplicationController
   def index
-    render json: CustomerSerializer.new(Customer.all), status :ok
+    render json: CustomerSerializer.new(Customer.all), status: :ok
   end
 end

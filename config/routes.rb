@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   namespace :api do
     namespace :v1 do
-      resources :subscriptions, only: [:index, :show, :update]  # Add other actions as needed (create, update, etc.)
+      resources :subscriptions, only: [:index, :show, :update]
+      resources :customers, only: [:index]
+      resources :teas, only: [:index]
     end
   end
 end
