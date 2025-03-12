@@ -1,6 +1,6 @@
-tea1 = Tea.create(title: 'Green Tea', description: 'A refreshing and healthy tea.', temperature: 'Hot', brew_time: 3)
-tea2 = Tea.create(title: 'Black Tea', description: 'Strong and robust tea.', temperature: 'Hot', brew_time: 5)
-tea3 = Tea.create(title: 'Chamomile Tea', description: 'A calming herbal tea.', temperature: 'Hot', brew_time: 4)
+tea1 = Tea.create(title: 'Green Tea', description: 'A refreshing and healthy tea.', temperature: 185, brew_time: 3)
+tea2 = Tea.create(title: 'Black Tea', description: 'Strong and robust tea.', temperature: 172, brew_time: 5)
+tea3 = Tea.create(title: 'Chamomile Tea', description: 'A calming herbal tea.', temperature: 190, brew_time: 4)
 
 customer1 = Customer.create(first_name: 'John', last_name: 'Doe', email: 'john.doe@example.com', address: '123 Elm St, Springfield')
 customer2 = Customer.create(first_name: 'Jane', last_name: 'Smith', email: 'jane.smith@example.com', address: '456 Oak St, Springfield')
