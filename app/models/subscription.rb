@@ -7,4 +7,10 @@ class Subscription < ApplicationRecord
   validates :title, :frequency, presence: true
   validates :price, presence: true, numericality: true
   validates :customers_subscribed, presence: true, numericality: {only_integer: true}
+
+  after_initialize :set_default_user_subscribed, if: :new_record?
+
+  def set_default_user_subscribed
+    self.user_subscribed ||= 0
+  end
 end
