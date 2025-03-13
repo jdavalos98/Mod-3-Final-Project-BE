@@ -6,9 +6,9 @@ customer1 = Customer.create(first_name: 'John', last_name: 'Doe', email: 'john.d
 customer2 = Customer.create(first_name: 'Jane', last_name: 'Smith', email: 'jane.smith@example.com', address: '456 Oak St, Springfield')
 customer3 = Customer.create(first_name: 'Alex', last_name: 'Johnson', email: 'alex.johnson@example.com', address: '789 Pine St, Springfield')
 
-subscription1 = Subscription.create(title: 'Monthly Green Tea', price: 19.99, frequency: 'Monthly', customers_subscribed: 10)
-subscription2 = Subscription.create(title: 'Weekly Black Tea', price: 9.99, frequency: 'Weekly', customers_subscribed: 20)
-subscription3 = Subscription.create(title: 'Bi-weekly Chamomile Tea', price: 14.99, frequency: 'Bi-weekly', customers_subscribed: 15)
+subscription1 = Subscription.create(title: 'Monthly Green Tea', price: 19.99, frequency: 'Monthly')
+subscription2 = Subscription.create(title: 'Weekly Black Tea', price: 9.99, frequency: 'Weekly')
+subscription3 = Subscription.create(title: 'Bi-weekly Chamomile Tea', price: 14.99, frequency: 'Bi-weekly')
 
 SubscriptionCustomer.create(subscription_id: subscription1.id, customer_id: customer1.id, status: true)
 SubscriptionCustomer.create(subscription_id: subscription1.id, customer_id: customer2.id, status: true)

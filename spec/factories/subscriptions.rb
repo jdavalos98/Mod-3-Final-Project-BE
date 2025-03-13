@@ -1,8 +1,12 @@
 FactoryBot.define do
   factory :subscription do
-    title { Faker::Commerce.product_name }
-    price { Faker::Commerce.price(range: 1..100.0, as_string: true) }
-    frequency { Faker::Commerce.material }
-    customers_subscribed { Faker::Number.between(from: 1, to: 100) }
+    title { "Monthly Green Tea" }
+    price { 19.99 }
+    frequency { "Monthly" }
+    customers_subscribed { 0 } 
+
+    after(:create) do |subscription|
+      subscription.update!(customers_subscribed: subscription.subscription_customers.where(status: true).count)
+    end
   end
 end
