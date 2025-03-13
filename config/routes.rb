@@ -12,7 +12,10 @@ Rails.application.routes.draw do
       resources :customers, only: [:index]
       resources :teas, only: [:index] 
       resources :subscriptions, only: [:index, :show] do
-        resources :subscription_customers, only: [:update]
+        resources :subscription_customers, only: [:index]  # Keep this line for the index route
+        
+        # Custom route for PATCH to update subscription_customer
+        patch 'subscription_customers/:customer_id', to: 'subscription_customers#update', as: 'update_subscription_customer'
       end
     end
   end
