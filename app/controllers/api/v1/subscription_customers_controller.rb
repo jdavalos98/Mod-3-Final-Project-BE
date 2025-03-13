@@ -8,12 +8,10 @@ class Api::V1::SubscriptionCustomersController < ApplicationController
 
 
   def update
-    # Find the subscription and customer records
     subscription = Subscription.find_by(id: params[:subscription_id])
     customer = Customer.find_by(id: params[:customer_id])
-  binding.pry
+  # binding.pry
     if subscription && customer
-      # Use the update_status method to handle the updating logic
       subscription_customer = SubscriptionCustomer.update_status(
         subscription.id, customer.id, params[:status]
       )
