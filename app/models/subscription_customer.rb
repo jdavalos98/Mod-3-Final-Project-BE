@@ -19,11 +19,12 @@ class SubscriptionCustomer < ApplicationRecord
       )
     end
     subscription_customer.subscription.update(
-      customers_subscribed: subscription_customer.subscription.subscription_customer.where(status: true).count
+      customers_subscribed: subscription_customer.subscription.subscription_customers.where(status: true).count
     )
     subscription_customer
   end
 
+  
   # def self.update_status(customer_id, subscription, subscription_customer)
   #   if subscription_customer
   #     new_status = !subscription_customer.status

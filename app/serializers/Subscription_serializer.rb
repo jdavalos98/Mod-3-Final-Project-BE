@@ -9,7 +9,8 @@ class SubscriptionSerializer
       .map do |subscription_customer|
         customer = subscription_customer.customer
         {
-          title: "#{customer.first_name} #{customer.last_name}",
+          id: customer.id,
+          title: "#{customer.first_name} #{customer.last_name}",  # Corrected interpolation here
           email: customer.email,
           status: subscription_customer.status
         }
